@@ -1,0 +1,42 @@
+controller:
+  nginxplus: true
+  image:
+    repository: "gcr.io/nginx-ic-dev/nginx-plus-ingress"
+    tag: "edge"
+  service:
+    loadBalancerIP: "IP"
+
+#----Commnda za podizanje preko HELMA-------#
+#namespace koji cemo koristiti dodali 
+helm template . --namespace nginx-ingress -f <filename.yaml> > nginx-ingress.yaml
+kubectl create namespce nginx-ingress
+kubectl apply -f nginx-ingress.yaml -n nginx-ingress
+
+#create local proxy
+kubectl port-forward <pods of nginx sto smo podigli> 8080:8080 -n <namespace name>
+
+#digli sada 2   applikaciju sa hostom shapes.example.com  i dodali je u ingress resourse 
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: shapes-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: shapes.example.com
+    http:
+      paths:
+      - path: /circles
+        backend:
+          serviceName: circles
+          servicePort: 80
+      - path: /triangles
+        backend:
+          serviceName: triangles
+          servicePort: 80
+
+# lista ingres resourca
+kubectl get ing
+
+
