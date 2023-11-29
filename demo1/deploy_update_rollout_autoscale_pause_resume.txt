@@ -1,0 +1,28 @@
+#OBJASNJENJE SVEGA SMO SMO RADILI I COMMANDE
+
+#------------UPDATE DEPLOYMENT ------- ####
+nano demo.yaml , change code inside then again apply npr replica 3 na 6 ili neku drugu image 
+
+#------------ ROLLOUT DEPLOYMENT -------@@@@
+kubectl rollout status deployment/<name of deployment>
+kubectl rollout history deployment/<name>
+kubectl rollout undo deployment/<name of deployment> --to-revision=<number>
+
+#-------------Scale of deployments>>>>>>>>>>>>>>>>>>>#
+#ovako podizemo ili spusatamo replicas
+kubectl scale deployment <name of deployments> --replicas=4 
+
+#AUTOSCALE
+kubectl autoscale deployment <name of deployments> --min=5 --max=9 --cpu-percent=80
+
+#DELETE THAT AUTOSCALE
+kubectl delete hpa <name of deployment> 
+
+#LISTA KADA ODRADIMO AUTOSCALE
+kubectl get hpa
+kubectl describe hpa <name of deployments>
+
+#------------pause and resume deployment----------#
+kubectl rollout pause deployment/<name of deployment>
+
+kubectl rollout resume deployment/<name of deployment>

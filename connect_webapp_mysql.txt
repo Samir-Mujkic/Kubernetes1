@@ -1,0 +1,18 @@
+#Spojiti 2 kontainera na kubernetes  tj webapp i mysqldb
+
+#Izbaci listu podova i njihova imena podova  koja nam treba
+kubectl get pods
+
+#uci na kontainer
+kubectl exec -it <name> bash
+nano var/www/html/indes.php
+dodati ime db sto smo odredili u container tj pod
+password od mysql 
+dbname dodati ime db koje je image mysql ima
+
+
+#uci na db container
+kubectl exec -it <name of dbpod> bash
+mysql -u root -p pa ispod password od mysql image
+kreirati db sto smo odredili u webapp pa onda istu ime tabele i dodati sta zelimo
+exit

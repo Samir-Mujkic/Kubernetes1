@@ -1,0 +1,55 @@
+#Context is object koji sadrzi set of acces parameters for cluster
+
+#namespaces= sudivide cluster into multiple virtual cluster (tim 1 , tim2)
+
+
+
+
+#Start minikube everytime start laptop 
+minikube start
+
+kubectl get nodes
+kubectl get pods
+
+#info o clusteru
+kubectl cluster-info
+
+#info o configu
+kubectl config view
+
+#lista clustera
+kubectl config get-cluster
+
+#lista namespace
+kubectl get namespace
+
+#kreiranje namespace
+kubectl create namespace <name>
+
+#kubectl delete namespace
+kubectl delete namespace <name>
+
+#lista podova na namespace
+kubectl get pods --namespace=<name>
+
+#lista svih available api na serveru
+kubectl api-versions
+
+#dizemo dashboard
+minikube dashboard
+
+#minikube kubernetes services
+minikube addons list
+
+#=====================CREATE DEPLOYMENT ON MINIKUBE=======================#
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10
+
+#expose port on deployment
+kubectl expose deployment hello-minikube --type:NodePort --port=8080
+
+#lista deploymenta
+kubectl list deployments
+
+#lista deploymneta i info o njima
+kubectl get services
+

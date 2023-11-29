@@ -1,0 +1,28 @@
+#Lista nodova na masteru
+kubectl get nodes
+
+#lista podova na masteru (nodu)
+kubectl get pods
+
+#--------kubernetes deploy nginx on nodes ------------#
+#create deployment
+kubectl create deployment nginx --image=nginx
+
+#verify deployment
+kubectl get deployments
+
+#vise info o deploymentima ( tacnije nginx sada ili neki drugi samo dodati ime umjesto nginx deploymenta)
+kubectl describe get deployments nginx
+
+#create service on nodes
+kubectl create service nodeport nginx --tcp=80:80
+
+#chech which deployment ruuning on which node
+kubectl get svc
+
+#delete deployment
+kubectl delete deployment <name>
+
+
+#Install minikube on ubuntu and deploy application
+https://medium.com/@dileepjallipalli/how-to-install-and-use-minikube-for-k8s-ee30a75ce8bc

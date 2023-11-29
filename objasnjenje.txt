@@ -1,0 +1,33 @@
+    apiVersion: apps/v1 - Ovaj redak označava verziju API-ja koju koristimo za definiranje objekata kroz YAML konfiguracijski fajl. U ovom slučaju, koristimo verziju "apps/v1" koja se odnosi na Kubernetes API.
+
+    kind: Deployment - Ovaj redak definira vrstu objekta koji stvaramo. U ovom slučaju, to je "Deployment" koji se koristi za upravljanje replikama aplikacije na Kubernetes klasteru.
+
+    metadata: - Ovaj blok sadrži metapodatke o Deployment objektu, kao što su ime i oznake koje se koriste za identifikaciju.
+
+    name: webapp1 - Ovaj redak postavlja ime Deployment objekta na "webapp1". To će biti naziv pod kojim će se objekt referencirati u Kubernetes klasteru.
+
+    labels: - Ovaj blok definira oznake koje se dodjeljuju Deployment objektu. Oznake su ključni parovi koji se koriste za identifikaciju i grupiranje objekata.
+
+    app: webapp-sql - Ova oznaka ("app") ima vrijednost "webapp-sql" i koristi se za identifikaciju aplikacije.
+
+    tier: frontend - Ova oznaka ("tier") ima vrijednost "frontend" i koristi se za identifikaciju sloja aplikacije.
+
+    spec: - Ovaj blok definira specifikaciju Deployment objekta.
+
+    replicas: 1 - Ovaj redak postavlja broj replika Deployment objekta na 1. To znači da će se samo jedna instanca aplikacije pokrenuti.
+
+    selector: - Ovaj blok definira selektor koji se koristi za odabir podova koje Deployment želi upravljati.
+
+    matchLabels: - Ovaj blok definira oznake koje se uspoređuju s oznakama podova kako bi se odabrali podovi za upravljanje.
+
+    template: - Ovaj blok definira predložak (template) za stvaranje podova koji će biti upravljani od strane Deployment objekta.
+
+    metadata: - Ovaj blok sadrži metapodatke o predlošku, kao što su oznake.
+
+    labels: - Ovaj blok definira oznake koje će biti dodijeljene podovima stvorenim na temelju predloška.
+
+    app: webapp-sql - Ova oznaka ("app") ima vrijednost "webapp-sql" i koristi se za identifikaciju aplikacije.
+
+    tier: frontend - Ova oznaka ("tier") ima vrijednost "frontend" i koristi se za identifikaciju sloja aplikacije.
+
+Nadam se da ovo objašnjenje pomaže! Javite ako imate još pitanja.
