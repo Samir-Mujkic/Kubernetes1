@@ -1,0 +1,36 @@
+### use i get context ###
+
+Prebacivanje sa jednog Clustera na drugi
+npr stage C, test C, Production C
+
+Svaki novi cluster se mora dodati u Kubeconfig tj kube/config
+
+kubectl config view - view kubernetes config 
+
+kubectl config current-context  - current config CLUSTER
+
+kubectl config get-contexts  - list kubernetes Cluster
+
+kubectl get context staging  - view kubernetes context info
+
+kubectl get context staging  - info o Cluster 
+
+{000
+
+kubectl config set-context <context-name> --namespace=<namespace-name> --user=<user-name> --cluster=<cluster-name>
+
+Here <context-name> is the new context you want to create,
+ <namespace-name> is the namespace that this context should point to,
+ <user-name> is the user that you want to authenticate as, and
+ <cluster-name> is the name of the Kubernetes cluster.
+
+
+$ kubectl config set-context staging --cluster=staging --namespace=staging
+ --user=staging-admin
+
+
+00000}
+
+kubectl config use-context <context-name>   -swith contexts
+
+kubectl config delete-context <context-name>  - delte context

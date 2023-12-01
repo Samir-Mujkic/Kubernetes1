@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: my-configmap
+data:
+ wordpress_version: "5.2.2"
+ wordpress_user: "ubuntu"
+
+apiVersion: v1                  apiVersion: v1              . apiVersion: v1
+kind: Pod                       kind: Pod                   . kind: Pod
+metadata:                       metadata:                   . metadata:
+ name: configmap-demo            name:configmap-demo        .  name: configmap-demo
+spec:                           spec:                       . spec:
+ containers:                     containers:                .  containers:
+ - name: demo-container          - name: demo-container     .   - name: demo-container
+   image: wordpress                image: wordpress         .     image: wordpress
+   envFrom:                        env:                     .     volumeMounts:
+    - configMapRef:                 - name: VERSION         .      - name: config
+       name: my-configmap             valueFrom:            .        mounthPath: /etc/config
+                                       configMapKeyRef:     .  volumes:
+                                        name: my-configmap      -name: config
+                                        key: wordporess_version  configMap:
+                                                                  name:configmap-3
+                                                                 (OVDJE OBJASNJENJE jer
+                                                                  nema veze) ConfigMap 
+                                                              

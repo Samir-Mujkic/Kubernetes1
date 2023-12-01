@@ -1,0 +1,17 @@
+
+
+#--------------Service------------------#
+--Je metod for exposing network app koji running na 1 ili vise pod in cluster
+tj da klijent moze interact it with
+--Each pod get own ip (kubernetes ensure it)
+--Service api expose groups of pods over network
+--Ingress nije service , ali moze sluziti kao entry point for cluster
+--Gateway api add to cluster is family of extensions API using CRD
+  onda to uzeti to configure acces to netwrok services koji running on Cluste
+--Spajanje Service-EndPoitnSlice ako nemaju selectora kod Service
+--Cluster ip is expored via ingress or Gateway , dobije ip od range pool
+  a mozemo dodati i manuelno od tog range pool
+--Cloud-native-manager configure LB to forward traffic to assigned Nodeport
+  mozemo i disable LB-Nodeport , onda je traffic LB-PODs directly
+-- Headless Service nema ip i moze interface with other with Selectors i DNS
+

@@ -1,0 +1,27 @@
+
+
+
+###-----------------INGRESS----------------###
+
+--export HTTP/S routes from outside to Cluster to service inside C
+  routing is controlled by rules defined in Ingress Resource
+--Ingress Controler is responsible for fulfilling INgress, with LB
+  Ingress bez Ingress Controllera nema efekta
+
+
+--Ingress class: Ingres resource can target specific ingress controler
+                 kada run multiple controller in same CLUSTER
+  tj vise controlera i ingresclass daje config kako ce ici 
+  npr     Controller1 - Resource2
+          Controller2 - Resource3
+          Controller3 - Resource1
+
+--Mozemo ingresclass spojiti i sa cjelim clusterom i sa NameSpace
+--DefaultINgressClass = New ingress will be assigned to DefaultIngressclass
+
+-----Types of Ingress-------
+--Ingres is single service
+--Ip to-> more service based on HTTP URI (Simple fanout naziv)
+--Name based virtual hosting suport routing http traffic to multiple hostname
+-- i npr moze 2 hosta sa prefix tj path i 
+   treci bez hosta i svi ostali prefix tj path idu ka njemu

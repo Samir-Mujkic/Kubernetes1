@@ -1,0 +1,31 @@
+###---- Config map-----###
+
+-- is API object for storing non-confidential date in key-value-pairs
+   i oni se koriste u podovima
+-- Pod and ConfigMap must be in same namespace
+-- ConfigMap can be moudet as data volumes.I moze biti koristen u 2-im system
+  
+
+                     Config map
+
+             Volume                  Volume
+
+
+
+        Pod   Pod   Pod          Pod  Pod  Pod
+
+
+
+
+
+
+--How to create config map--
+1. Imperative - Command line
+2. Declarative - file.yaml
+
+-- 4 nacina kako koristiti ConfigMap to configure container inside pod
+  1.Inside a container command and args
+  2.Enviroment variables for container
+  3.Add a file in read only volume,for app to read
+  4. Write code to run inside pod that uses the kubernetes api to read a CM
+
