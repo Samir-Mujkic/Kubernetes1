@@ -26,6 +26,9 @@ kubectl get namespace
 #kreiranje namespace
 kubectl create namespace <name>
 
+#switch namespace
+kubectl config set-context --current --namespace=<namespace-name>
+
 #kubectl delete namespace
 kubectl delete namespace <name>
 
