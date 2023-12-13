@@ -20,6 +20,9 @@ kubectl config view
 #lista clustera
 kubectl config get-cluster
 
+#Trenutni namespace
+kubectl config current-context
+
 #lista namespace
 kubectl get namespace
 
