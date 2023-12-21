@@ -58,4 +58,71 @@ kubectl list deployments
 
 #lista deploymneta i info o njima
 kubectl get services
+#Create helm 
+  
+  helm create <name>
+  tree <name of helm>  =#vidimo tree of helm
 
+#List helm
+  
+  helm list -a =#list of created list
+
+#Install helm on Kubernetes Cluster
+
+  helm install <name for Kubernetes> <name of helm>
+
+#Upgrade helm on kubernetes
+
+  helm upgrade <name for Kubernetes> <name of helm>
+
+#Rollback
+
+  helm rollback <name in kubernetes> < revision number>
+      
+       1.Create
+       2.Update
+       3.Rollingback
+
+#Helm debug dry run
+
+  helm install <name for kubernetes> --debug --dry-run <name of helm>
+     =#radimo debug prije installiranja
+
+#Helm Template
+   #Slicno debug ali ne interact with kubernetes
+ #VALIDATION .YAML locally run
+ 
+  helm template <name of helm>
+      = Generation all chart helm
+      = Preparation before installarion
+
+#HELM LINT
+  = Looking for misconfiguration, errors with helm chart
+
+  helm lint <name of helm>
+   =Tako[er sluzi prije installiranja 
+
+#HELM UNINSTALL
+  =Uninstal helm
+
+  helm uninstall <name of helm in kubernetes>
+
+#HELM REPO
+  =Dodavanje repo koji nam sluze na gotove chartove
+
+  helm search hub wordpress
+                  mqsql
+                  ubuntu
+                  ....
+                  ...etc
+
+#HOOKS 
+  =Odradjuje nesto prije instaliranja ili poslije 
+   pre installarion    post installation
+   pre delete          post delete
+   pre update          post update
+   pre rollback        post rollback
+ 
+#TEST
+
+ =Radi testiranje na vec postojecevm helmu u kubernetesu
