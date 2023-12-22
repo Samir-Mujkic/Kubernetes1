@@ -1,7 +1,8 @@
 #Context is object koji sadrzi set of acces parameters for cluster
 
 #namespaces= sudivide cluster into multiple virtual cluster (tim 1 , tim2)
-
+#EXPOSE SERVICE ON NODEPORT
+kubectl expose service dash-opensearch-dashboards --type=NodePort --target-port=5601 --name=opensearchdash
 
 
 
